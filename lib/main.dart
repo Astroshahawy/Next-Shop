@@ -1,15 +1,15 @@
+import 'package:next_shop_app/core/injection/injector.dart';
+import 'package:next_shop_app/src/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
-import 'package:next_shop_app/presentation/routes/app_router.dart';
-
-import 'app.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  initGetIt();
+
   runApp(
     Phoenix(
-      child: MyApp(
-        appRouter: AppRouter(),
-      ),
+      child: const MyApp(),
     ),
   );
 }
